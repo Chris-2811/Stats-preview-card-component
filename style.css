@@ -23,15 +23,16 @@ img {
 
 body {
     font-family: 'Inter', sans-serif;
+    background: var(--main-background);
+    min-height: 100vh;
 }
 
 .container {
-    background: var(--main-background);
-    height: 100vh;
-    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .card {
@@ -85,20 +86,24 @@ body {
 }
 
 
-
-.card .image::before {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: url(images/image-header-desktop.jpg) no-repeat center center/cover;    
-    opacity: 0.6;
+.card .image {
+    background-color: var(--accent);
 }
 
-.card .image {
-    position: relative;
-    height: 466px;
-   background: var(--accent);
+.card .image img {
+    mix-blend-mode: multiply;
+    opacity: 0.75;
+    object-fit: cover;
+}
+
+.credits {
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.credits a {
+    color: hsl(228, 45%, 44%);
 }
